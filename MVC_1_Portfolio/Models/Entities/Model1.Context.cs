@@ -13,10 +13,10 @@ namespace MVC_1_Portfolio.Models.Entities
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class UpSchoolPortfolioEntities : DbContext
+    public partial class UpSchoolPortfolioEntities1 : DbContext
     {
-        public UpSchoolPortfolioEntities()
-            : base("name=UpSchoolPortfolioEntities")
+        public UpSchoolPortfolioEntities1()
+            : base("name=UpSchoolPortfolioEntities1")
         {
         }
     

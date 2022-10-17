@@ -4,9 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="UpSchoolPortfolioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'UpSchoolPortfolio.dbo.About' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+      <Schema Namespace="UpSchoolPortfolioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="About">
           <Key>
             <PropertyRef Name="AboutID" />
@@ -17,8 +15,6 @@ warning 6002: The table/view 'UpSchoolPortfolio.dbo.About' does not have a prima
           <Property Name="Description" Type="nvarchar" MaxLength="300" />
           <Property Name="ImageUrl" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'UpSchoolPortfolio.dbo.Admin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="AdminId" />
@@ -28,8 +24,6 @@ warning 6002: The table/view 'UpSchoolPortfolio.dbo.Admin' does not have a prima
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="Status" Type="bit" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'UpSchoolPortfolio.dbo.Services' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Services">
           <Key>
             <PropertyRef Name="ServicesId" />
@@ -37,8 +31,6 @@ warning 6002: The table/view 'UpSchoolPortfolio.dbo.Services' does not have a pr
           <Property Name="ServicesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'UpSchoolPortfolio.dbo.ServicesFeature' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ServicesFeature">
           <Key>
             <PropertyRef Name="ServiceFeatureId" />
@@ -49,39 +41,13 @@ warning 6002: The table/view 'UpSchoolPortfolio.dbo.ServicesFeature' does not ha
           <Property Name="ImageUrl" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityContainer Name="UpSchoolPortfolioModelStoreContainer">
-          <EntitySet Name="About" EntityType="Self.About" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [About].[AboutID] AS [AboutID], 
-    [About].[Name_Surname] AS [Name_Surname], 
-    [About].[Title] AS [Title], 
-    [About].[Description] AS [Description], 
-    [About].[ImageUrl] AS [ImageUrl]
-    FROM [dbo].[About] AS [About]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Admin" EntityType="Self.Admin" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Admin].[AdminId] AS [AdminId], 
-    [Admin].[Username] AS [Username], 
-    [Admin].[Password] AS [Password], 
-    [Admin].[Status] AS [Status]
-    FROM [dbo].[Admin] AS [Admin]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Services" EntityType="Self.Services" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Services].[ServicesId] AS [ServicesId], 
-    [Services].[Title] AS [Title]
-    FROM [dbo].[Services] AS [Services]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="ServicesFeature" EntityType="Self.ServicesFeature" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [ServicesFeature].[ServiceFeatureId] AS [ServiceFeatureId], 
-    [ServicesFeature].[Title] AS [Title], 
-    [ServicesFeature].[Description] AS [Description], 
-    [ServicesFeature].[ImageUrl] AS [ImageUrl]
-    FROM [dbo].[ServicesFeature] AS [ServicesFeature]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServicesFeature" EntityType="Self.ServicesFeature" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="UpSchoolPortfolioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -120,7 +86,7 @@ warning 6002: The table/view 'UpSchoolPortfolio.dbo.ServicesFeature' does not ha
           <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="ImageUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="UpSchoolPortfolioEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="UpSchoolPortfolioEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Abouts" EntityType="Self.About" />
           <EntitySet Name="Admins" EntityType="Self.Admin" />
           <EntitySet Name="Services" EntityType="Self.Service" />
@@ -131,7 +97,7 @@ warning 6002: The table/view 'UpSchoolPortfolio.dbo.ServicesFeature' does not ha
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="UpSchoolPortfolioModelStoreContainer" CdmEntityContainer="UpSchoolPortfolioEntities">
+        <EntityContainerMapping StorageEntityContainer="UpSchoolPortfolioModelStoreContainer" CdmEntityContainer="UpSchoolPortfolioEntities1">
           <EntitySetMapping Name="Abouts">
             <EntityTypeMapping TypeName="UpSchoolPortfolioModel.About">
               <MappingFragment StoreEntitySet="About">

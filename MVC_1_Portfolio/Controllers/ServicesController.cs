@@ -17,7 +17,7 @@ namespace MVC_1_Portfolio.Controllers
          * Where
          */
 
-        UpSchoolPortfolioEntities db = new UpSchoolPortfolioEntities();
+        UpSchoolPortfolioEntities1 db = new UpSchoolPortfolioEntities1();
         public ActionResult Index()
         {
             var values = db.Services.ToList();
