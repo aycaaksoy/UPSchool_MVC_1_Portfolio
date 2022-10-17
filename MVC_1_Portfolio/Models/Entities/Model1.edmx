@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="UpSchoolPortfolioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'UpSchoolPortfolio.dbo.About' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="AboutID" />
+          </Key>
+          <Property Name="AboutID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'UpSchoolPortfolio.dbo.Admin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'UpSchoolPortfolio.dbo.Services' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="ServicesId" />
+          </Key>
+          <Property Name="ServicesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'UpSchoolPortfolio.dbo.ServicesFeature' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ServicesFeature">
+          <Key>
+            <PropertyRef Name="ServiceFeatureId" />
+          </Key>
+          <Property Name="ServiceFeatureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="UpSchoolPortfolioModelStoreContainer">
+          <EntitySet Name="About" EntityType="Self.About" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [About].[AboutID] AS [AboutID], 
+    [About].[Name_Surname] AS [Name_Surname], 
+    [About].[Title] AS [Title], 
+    [About].[Description] AS [Description], 
+    [About].[ImageUrl] AS [ImageUrl]
+    FROM [dbo].[About] AS [About]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Admin" EntityType="Self.Admin" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Admin].[AdminId] AS [AdminId], 
+    [Admin].[Username] AS [Username], 
+    [Admin].[Password] AS [Password], 
+    [Admin].[Status] AS [Status]
+    FROM [dbo].[Admin] AS [Admin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Services" EntityType="Self.Services" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Services].[ServicesId] AS [ServicesId], 
+    [Services].[Title] AS [Title]
+    FROM [dbo].[Services] AS [Services]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ServicesFeature" EntityType="Self.ServicesFeature" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ServicesFeature].[ServiceFeatureId] AS [ServiceFeatureId], 
+    [ServicesFeature].[Title] AS [Title], 
+    [ServicesFeature].[Description] AS [Description], 
+    [ServicesFeature].[ImageUrl] AS [ImageUrl]
+    FROM [dbo].[ServicesFeature] AS [ServicesFeature]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UpSchoolPortfolioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="AboutID" />
+          </Key>
+          <Property Name="AboutID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServicesId" />
+          </Key>
+          <Property Name="ServicesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ServicesFeature">
+          <Key>
+            <PropertyRef Name="ServiceFeatureId" />
+          </Key>
+          <Property Name="ServiceFeatureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="ImageUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="UpSchoolPortfolioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Abouts" EntityType="Self.About" />
+          <EntitySet Name="Admins" EntityType="Self.Admin" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="ServicesFeatures" EntityType="Self.ServicesFeature" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UpSchoolPortfolioModelStoreContainer" CdmEntityContainer="UpSchoolPortfolioEntities">
+          <EntitySetMapping Name="Abouts">
+            <EntityTypeMapping TypeName="UpSchoolPortfolioModel.About">
+              <MappingFragment StoreEntitySet="About">
+                <ScalarProperty Name="AboutID" ColumnName="AboutID" />
+                <ScalarProperty Name="Name_Surname" ColumnName="Name_Surname" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="UpSchoolPortfolioModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="UpSchoolPortfolioModel.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="ServicesId" ColumnName="ServicesId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServicesFeatures">
+            <EntityTypeMapping TypeName="UpSchoolPortfolioModel.ServicesFeature">
+              <MappingFragment StoreEntitySet="ServicesFeature">
+                <ScalarProperty Name="ServiceFeatureId" ColumnName="ServiceFeatureId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
