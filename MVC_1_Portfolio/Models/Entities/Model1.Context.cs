@@ -29,5 +29,6 @@ namespace MVC_1_Portfolio.Models.Entities
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<ServicesFeature> ServicesFeatures { get; set; }
+        public virtual DbSet<Testimonial> Testimonials { get; set; }
     }
 }
