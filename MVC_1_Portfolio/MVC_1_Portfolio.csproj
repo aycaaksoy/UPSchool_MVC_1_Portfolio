@@ -224,6 +224,7 @@
     <Content Include="Views\Shared\_NewAdminLayout.cshtml" />
     <Content Include="Views\Services\Index.cshtml" />
     <Content Include="Views\Services\AddService.cshtml" />
+    <Content Include="Views\Services\UpdateService.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

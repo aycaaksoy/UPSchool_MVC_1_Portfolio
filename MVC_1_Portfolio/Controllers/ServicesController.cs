@@ -45,5 +45,21 @@ namespace MVC_1_Portfolio.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult UpdateService(int id)
+        {
+            var values = db.Services.Find(id);
+            return View(values);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateService(Service p)
+        {
+            var values = db.Services.Find(p.ServicesId);
+            values.Title = p.Title;
+            db.SaveChanges();
+           return RedirectToAction("Index");
+        }
     }
 }
